@@ -102,7 +102,7 @@ in recovery mode.
 
 ## Known Limitations
 
-1.An intermittent error has been observed where Ubuntu will get stuck launching the
+1. An intermittent error has been observed where Ubuntu will get stuck launching the
 desktop. If this occurs, reset the device.
 
 2. It has been observed sometimes after flash that the oem setup may fail to launch
@@ -110,15 +110,15 @@ on the display interface. If this occurs, reset the device.
 
 ## Getting Technical Support
 
-If you require additional support with this product, or any other products
-from RTD Embedded Technologies, contact us using the information below:
+If you require additional support with this product, or any other products from
+RTD Embedded Technologies, contact us using the information below:
 
-    RTD Embedded Technologies, Inc.
-    103 Innovation Blvd.
-    State College, PA 16803 USA
+RTD Embedded Technologies, Inc.\
+103 Innovation Boulevard\
+State College, PA 16803 USA
 
-    Telephone: (814) 234-8087
-    Fax: (814) 234-5218
-    Sales Information and Quotes: sales@rtd.com
-    Technical Assistance: techsupport@rtd.com
-    Web Site: http://www.rtd.com
+Telephone: (814) 234-8087\
+Fax: (814) 234-5218\
+Sales Information and Quotes: sales@rtd.com\
+Technical Assistance: techsupport@rtd.com\
+Web Site: [https://www.rtd.com](https://www.rtd.com)
