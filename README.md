@@ -21,7 +21,7 @@ License Agreement.  See the file LICENSE.TXT.
 
 ## Supported Hardware
 
-This software has been verified to work with the CNV36JRN201 and Nvidia Jetson 
+This software has been verified to work with the [CNV36JRN201](https://www.rtd.com/nvidia/CNV36JRN_nano.htm) and Nvidia Jetson 
 ORIN(TM) NX Board. If you wish to make changes to this build process you can
 find more information at:
 https://docs.nvidia.com/jetson/archives/l4t-archived/l4t-3261/index.html
