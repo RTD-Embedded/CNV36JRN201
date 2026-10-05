@@ -1,0 +1,13 @@
+sshpass
+abootimg
+nfs-kernel-server
+libxml2-utils
+device-tree-compiler
+qemu-user-static
+binutils
+python
+flex
+bison
+libssl-dev
+make
+libgmp3-dev

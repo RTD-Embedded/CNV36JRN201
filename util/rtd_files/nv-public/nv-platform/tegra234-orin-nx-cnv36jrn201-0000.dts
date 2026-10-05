@@ -1,0 +1,131 @@
+// SPDX-License-Identifier: GPL-2.0-only
+// SPDX-FileCopyrightText: Copyright (c) 2023, NVIDIA CORPORATION & AFFILIATES.  All rights reserved.
+
+/dts-v1/;
+
+#include "tegra234-p3768-0000+p3767-0000.dts"
+#include "tegra234-p3768-0000+p3767-xxxx-nv-common.dtsi"
+
+/ {
+
+	model = "RTD CNV36JRN201HR NX";
+
+	aliases {
+		serial1 = &uarta;
+		serial2 = "/bus@0/serial@3110000";
+	};
+
+
+	bus@0 {
+
+	        serial@3110000 {	
+                        compatible = "nvidia,tegra194-hsuart";
+                        reset-names= "serial";
+                        status = "okay";
+		};
+        
+		i2c@3180000 {
+			status = "okay";
+		};
+
+		i2c@31b0000 {
+			status = "okay";
+		};
+
+		hdr40_i2c1: i2c@c250000 {
+			status = "okay";
+			gpio@20 {
+				compatible = "maxim,max7312";
+				reg = <0x20>;
+				gpio-controller;
+				#gpio-cells = <2>;
+				gpio-line-names =
+					"CN6-1",
+					"CN6-2",
+					"CN6-3",
+					"CN6-4",
+					"CN6-5",
+					"CN6-6",
+					"CN6-7",
+					"CN6-8",
+					"CN6-9",
+					"CN6-10",
+					"CN6-11",
+					"CN6-12",
+					"CN6-13",
+					"CN6-14",
+					"reserved",
+					"CN6-16-5v-enable";
+					status = "okay";
+			 };            
+		};
+
+	padctl@3520000 {
+            pads {
+                usb3 {
+                    lanes {
+                        usb3-2 {
+                            nvidia,function = "xusb";
+                            status = "okay";
+                        };
+                    };
+                };
+            };
+
+            ports {
+		usb2-0 {
+			/delete-node/ port;
+		};
+		/delete-node/ usb3-1;		
+                usb3-2 {/* Goes to CN21 */
+                    nvidia,usb2-companion = <2>;
+                    status = "okay";
+                };
+            };
+		}; 
+
+		usb@3610000 {
+			status = "okay";
+
+			phys = <&{/bus@0/padctl@3520000/pads/usb2/lanes/usb2-0}>,
+			       <&{/bus@0/padctl@3520000/pads/usb2/lanes/usb2-1}>,
+			       <&{/bus@0/padctl@3520000/pads/usb2/lanes/usb2-2}>,
+			       <&{/bus@0/padctl@3520000/pads/usb3/lanes/usb3-0}>,
+			      // <&{/bus@0/padctl@3520000/pads/usb3/lanes/usb3-1}>,
+		               <&{/bus@0/padctl@3520000/pads/usb3/lanes/usb3-2}>;
+			phy-names = "usb2-0", "usb2-1", "usb2-2", "usb3-0", "usb3-2";
+				   // "usb3-1", "usb3-2";
+		};
+        
+	i2c@c240000 {
+		/delete-node/ fusb301@25;
+            gpio@20 {
+                    compatible = "maxim,max7312";
+                    reg = <0x20>;
+                    gpio-controller;
+                    #gpio-cells = <2>;
+                    gpio-line-names =
+                            "sp0_en",
+                            "sp0_invdir",
+                            "sp0_term",
+                            "sp0_mode2",
+                            "sp0_mode1",
+                            "sp0_mode0",
+                            "sp0_slew",
+                            "rsvd",
+                            "sp1_en",
+                            "sp1_invdir",
+                            "sp1_term",
+                            "sp1_mode2",
+                            "sp1_mode1",
+                            "sp1_mode0",
+                            "sp1_slew",
+                            "can_silent";
+
+                    vcc-supply = <&hdr40_vdd_3v3>;
+                    status = "okay";
+                    };
+		};
+
+	};
+};

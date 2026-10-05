@@ -1,0 +1,10 @@
+Change log for SWP-700020069 
+
+Programming Utility (CNV36JRN201 )
+
+Copyright (C) RTD Embedded Technologies, Inc.  All Rights Reserved.
+
+v01.00.00 (rev A)      05/20/2025         LEK 
+-----------------------------------------------
+- Initial version
+
